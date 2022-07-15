@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <Title> Agustin Fotografía 📸</Title>
+    <script src="https://kit.fontawesome.com/71a8d73a4c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="agus.css">
+</head>
+<body>
+    <!-- header-menu-->
+<header class="header">
+    <a href="#" class="logo">AM</a>
+    <input type="checkbox" id="side-menu" class="side-menu">
+    <label for="side-menu" class="hamb"><span class="hamb-line"></span></label>
+    <nav class="nav">
+        <ul class="menu">
+            <li><a href="#">Sobre mí</a></li>
+            <li><a href="#">Galería</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <!-- portada-->
+<section>
+    <div class="portada">
+    <h1> Agustín Martin Fotografía & Video</h1>
+    </div>
+
+<!-- about me-->
+<div class="about">
+    <div class="main">
+        <img src="agu.PNG">
+
+    <div class="about-text">
+        <h2> Sobre mi</h2>
+        <h5> Fotógrafo & Filmmaker</h5>
+        <p>Hola! Soy Agustín Martín, tengo 23 años, soy fotógrafo y videógrafo. Estoy cursando las materias finales de la tecnicatura en la carrera de Cine y Artes AV en la UNC. Amo lo relacionado con el mundo audiovisual y tener la posibilidad de plasmar y registrar sucesos importantes en la vida de las personas.</p>
+    </div>
+    </div>
+</section>
+
+<!-- portfolio-->
+<section id="galeria">
+    <h1> Galeria</h1>
+<div class="box-container">
+    <div class="box">
+        <img class="img-box" src="IMG_1795.jpg">
+        <div class="overlay"> <h2>Egresados</h2></div>
+    </div>
+    <div class="box">
+        <img class="img-box" src="IMG_5641.jpg">
+        <div class="overlay"><h2>Retratos</h2></div>
+    </div>
+    <div class="box">
+        <img class="img-box" src="IMG_3859.jpg">
+        <div class="overlay"> <h2>Artística</h2></div>
+    </div>
+    <div class="box">
+        <img class="img-box" src="IMG_4201.jpg">
+        <div class="overlay"> <h2>Deportes</h2></div>
+    </div>
+    <div class="box">
+        <img class="img-box" src="IMG_0939.jpg">
+        <div class="overlay"><h2> 15 años</h2></div>
+    </div>
+    <div class="box">
+        <img class="img-box" src="IMG_6350.jpg">
+        <div class="overlay"><h2>Recitales</h2></div>
+    </div>
+</div>
+<br>
+<!-- video-->
+<div class="videos">
+    <iframe width="540" height="315" src="https://www.youtube.com/embed/9GzKjMaj3is" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+    encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+</div>
+</section>
+<br> 
+<!--contacto-->
+<section class="contact">
+    <div class="contact-container">
+        <div class="contact-me">
+            <h3> Mis redes</h3>
+            <div class="redes">
+           <a href="https://www.behance.net/agustinmartin3" target="_blank" class="fa-brands fa-behance"></a>
+            <a href="https://www.linkedin.com/in/agust%C3%ADn-mart%C3%ADn-081554243/" target="_blank" class="fa-brands fa-linkedin-in"></a>
+           <a href="https://www.instagram.com/photograph_agus/" target="_blank" class="fa-brands fa-instagram"></a>
+        </div> 
+        </div>
+        <div class="form-c">
+            <form id="form" action="" class="form"> 
+            <h3> Hablemos</h3>
+                <label for="Nombre"> Nombre</label>
+                <input type="text" id="Nombre" name="Nombre" placeholder="Juan" required>
+                <label for="Mail">Mail</label>
+                <input type="email" id="Mail" name="Mail" placeholder="juanruiz@example.com" required>
+                <label for="Mensaje">Mensaje</label>
+                <textarea class="form" id="Mensaje" name="Mensaje" placeholder="Escribe tu mensaje..."required></textarea> 
+                
+                <button type="submit">Enviar</button>
+            </form>
+            <a href="mailto:photograph.agu@gmail.com" id="mailto"> mail</a>
+        </div>
+   </div>
+</section>
+</main>
+
+<footer>
+    <h4>&copy;Agustin Martin F&V</h4>
+</footer>
+<script>
+    const $form = document.querySelector('#form')
+    const $buttonMailTo = document.querySelector('#mailto')
+
+    $form.addEventListener('submit', handleSubmit)
+
+    function handleSubmit(event) {
+        event.preventDefault()
+        const form = new FormData(this)
+        $buttonMailTo.setAttribute('href', `mailto:photograph.agu@gmail.com?subject=nombre ${form.get('Nombre')} correo ${form.get('Mail')}&body=${form.get('Mensaje')}`)
+        $buttonMailTo.click()
+
+    }
+</script>
+</body>
+</html>
