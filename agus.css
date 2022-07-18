@@ -31,115 +31,50 @@ ul{
     top:0;
     width:100%;
 }
-
-.logo{
-    display: inline-block;
-    color: var(--orange);
-    font-size: 60px;
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+}
+.hamburger {
+  display: none;
 }
 
-.nav{
-    width:100%;
-    height:100%;
-    position:fixed;
-   background-color: whitesmoke;
-    overflow: hidden;
-    max-height: 0;
-    transition: .5s ease-out;
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: var(--orange);
+}
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.menu a{
-    display: block;
-    padding: 30px;
-    color: var(--orange);
+.nav-item {
+  margin-left: 5rem;
 }
 
-menu a:hover{
-    background-color: var(--orange-light);
-   
+.nav-link{
+  font-family: 'Poppins';
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--orange-light);
 }
 
-.hamb{
-    cursor:pointer;
-    float:right;
-    padding: 40px 20px;
-
+.nav-link:hover{
+  color: var(--grey);
 }
 
-.hamb-line{
-    background: var(--orange);
-    display:block;
-    height:2px;
-    position:relative;
-    width:24px;
-}
-
-.hamb-line::before,
-.hamb-line::after{
-    background: var(--orange);
-    content: '';
-    display:block;
-    height:100%;
-    position:absolute;
-    transition: all .2s ease-out;
-    width:100%;
-}
-.hamb-line::before
-{
-    top: 5px;
-}
-
-.hamb-line::after
-{
-    top: -5px;
-}
-
-.side-menu 
-{
-    display: none;
-}
-
-.side-menu:checked ~ nav{
-    max-height: 100%;
-}
-
-.side-menu:checked ~ .hamb .hamb-line {
-    background: transparent;
-}
-
-.side-menu:checked ~ .hamb .hamb-line::before {
-    transform: rotate(-45deg);
-    top:0;
-}
-
-.side-menu:checked ~ .hamb .hamb-line::after {
-    transform: rotate(45deg);
-    top:0;
-}
-
-@media (min-width: 768px)
-{
-    .nav{
-        max-height: none;
-        top: 0;
-        position: relative;
-        float: right;
-        width: fit-content;
-        background-color: transparent;
-    }
-
-    .menu li{
-        float: left;
-    }
-
-    .menu a:hover{
-        background-color: transparent;
-        color: var(--orange-light);
-    }
-
-    .hamb{
-        display: none;
-    }
+.nav-logo {
+  font-size: 2.1rem;
+  font-weight: 500;
+  color: var(--orange);
 }
 
 /* portada*/
@@ -148,15 +83,12 @@ menu a:hover{
     height: 50vh;
     width: 100vw;
     background-size: cover;
-
 }
-
 .portada h1{
     color:var(--orange-light);
     text-align: center;
-    font-size: 55px;
+    font-size: 45px;
     padding: 100px;
-  
 }
 
 /*about*/
@@ -167,10 +99,10 @@ menu a:hover{
 }
 .about img{
     height: auto;
-    width: 400px;
+    width: 320px;
 }
 .about-text{
-    width:550px
+    width:490px
 }
 .main{
     width: 1130px;
@@ -183,19 +115,19 @@ menu a:hover{
 .about-text h2{
     color: var(--grey);
     letter-spacing: 2px;
-    font-size: 72px;
-    margin-bottom: 20px;
+    font-size: 52px;
+    margin-bottom: 17px;
 }
 .about-text h5{
-    font-size: 25px;
-    margin-bottom: 22px;
+    font-size: 20px;
+    margin-bottom: 20px;
     text-transform: capitalize;
 }
 .about-text p{
     letter-spacing: 1px;
-    line-height: 28px;
+    line-height: 22px;
     font-size: 18px;
-    margin-bottom: 35px;
+    margin-bottom: 30px;
 }
 
 /* portfolio*/
@@ -218,8 +150,7 @@ menu a:hover{
     position: relative;
     height: 320px;
     margin-bottom: 12px;
-    margin-top: 20px;
-    
+    margin-top: 20px; 
 }
 .img-box{
     width: 100%;
@@ -252,115 +183,160 @@ menu a:hover{
 .videos{
     display: flex;
     justify-content: center;
-    
-}
-/* contacto*/
-.contact {
-    background-color: var(--grey);
-    width: 100vw;
-    padding: 80px 0px;
-    display: flex;
-    flex-direction: row; 
-}
-.contact-container{
-    display: flex;
-}
-.contact-me{
-    margin-top: 45px;
-    padding: 30px;
-    color: whitesmoke;
-    font-size: 24px;
-    margin-right: 600px;
-    margin-left: 100px;
-}
-.contact-me h3{
-    letter-spacing: 1px;
-}
-.redes{
-    display: flex;
-    flex-direction: row;
-    gap: 9px;  
-}
-.redes a{
-    color: whitesmoke;
-    cursor: pointer;
-    font-size: 36px;
-    text-align: center;
-    margin-top: 15px;
-    background-color: #FF7518;
-    border-radius: 60%;
-    line-height: 56px;
-    width: 56px;
-    height: 56px;
-}
-.redes a:hover{
-    background-color: whitesmoke;
-    color: #FF7518;
-}
-/*formuario*/
-.form{
-    display: flex;
-    flex-direction: column;
-}
-.form h3{
-    color: #FF7518;
-    font-size: 32px;
-}
-.form label{
-    font-size: 19px;
-    margin-top: 4px;
-    margin-bottom: 7px;
-    color: whitesmoke;
-}
-.form input{
-    border-radius: 8px;
-    height: 35px;
-    width: 220px;
-    border-style: none;
-    font-size: 20px;
-}
-.form textarea{
-    border-radius: 8px;
-    height: 160px;
-    width: 310px;
-    font-size: 20px;
-    font-family: 'Poppins';
-}
-button{
-    margin-left: 240px;
-    margin-top: 8px;
-    border-radius: 8px;
-    border-style: none;
-    width: 62px;
-    height: 38px;
-    font-size: 18px;
-    font-family: 'Poppins';
-    cursor: pointer;
-    background-color: #FF7518;
-}
-button:hover{
-    color: whitesmoke;
-}
-#mailto{
-    opacity: 0;
-    cursor: none;
 }
 
+/* contacto*/
+.section-header{
+    color: whitesmoke;
+    letter-spacing: 1.5px;
+    font-family: 'Poppins';
+    font-size: 35px;
+    margin-left: 50px;
+    padding-top: 24px;
+    padding-bottom: 15px;
+}
+#contact{
+    background-color: var(--grey);
+    padding-bottom: 25px;
+    
+}
+.contact-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    max-width: 840px;
+  }
+  .form-horizontal {
+    max-width: 400px;
+    font-family: 'poppins';
+    font-weight: 400;
+  }
+  label{
+    color: whitesmoke;
+    font-weight: 400;
+  }
+  .form-group input{
+    border-radius: 8px;
+    border-style: none;
+    height: 21px;
+    margin-bottom: 8px;
+  } 
+  textarea {
+    height: 200px;
+    width: 430px;
+    background-color: whitesmoke;
+    font-family: 'Poppins';
+    border-radius: 8px;
+  }
+  button {
+    height: 23px;
+    width: 90px;
+    font-weight: 700;
+    font-family: 'Poppins';
+    background-color: var(--orange);
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+  button:hover{
+    background-color: whitesmoke;
+  }
+  
+  /* Begin Right Contact Page */
+  .direct-contact-container {
+    max-width: 100vw;
+  }
+  
+  /* lugar telefono Section */
+  .contact-list {
+    list-style-type: none;
+    margin-left: -30px;
+    padding-right: 20px;
+  }
+  
+  .list-item {
+    line-height: 4;
+    color: var(--orange);
+  }
+  
+  .contact-text {
+    font: 300 18px 'Poppins', sans-serif;
+    color: whitesmoke;
+  }
+  
+  .place {
+    margin-left: 62px;
+  }
+  
+  .phone {
+    margin-left: 56px;
+  }
+  
+  .contact-text a {
+    color: whitesmoke;
+    text-decoration: none;
+  }
+  
+  
+  /* Social Media Icons */
+  .social-media-list {
+    position: relative;
+    font-size: 22px;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+  }
+  
+  .social-media-list li a {
+    color: #fff;
+  }
+  
+  .social-media-list li {
+    position: relative; 
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    margin: 10px 3px;
+    line-height: 60px;
+    border-radius: 50%;
+    color: #fff;
+    background-color: var(--orange);
+    cursor: pointer; 
+  }
+  
+  .social-media-list li:hover {
+    background-color: whitesmoke; 
+  }
+  
+  .social-media-list li:hover a {
+    color: var(--orange);
+  }
+  
+#mailto{
+    opacity: 0;
+    cursor: default;
+}
+
+/*footer*/
 footer{
     background-color: #F54703;
     width: 100vw;
-    height: 130px;
+    height: 120px;
 }
 footer h4{
     text-align: center;
     padding-top: 40px;
 }
+
 @media only screen and (max-width: 600px){
 
     .portada{
         min-width: 400px;
     }
-    
     .portada h1{
         text-align: center;
         font-size: 41px;
@@ -414,28 +390,110 @@ footer h4{
     .box{
     width: 80vw;
     }
-
     /*contactp*/
-    .contact {
+      #contact{
         min-width: 400px;
-        padding: 100px 0px;
-        display: flex;
-        flex-direction: row; 
-    }
-    .contact-container{
-        display: flex;
-        flex-direction: column-reverse;
-    }
-    .contact-me{
-        margin-right:0px;
-        margin-left:0px;
-    }    
-    /*form*/
-    .form-c{
-        margin-left: 38px;
-    }
+        padding-left: 35px;
+      }
+      .section-header{
+        padding-top: 27px;
+      }
     /*footer*/
     footer{
         min-width: 400px;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .contact-wrapper {
+      display: flex;
+      flex-direction: column;
+    }
+    .direct-contact-container, .form-horizontal {
+      margin: 0 auto;
+    }  
+    
+    .direct-contact-container {
+      margin-top: 40px;
+      max-width: 300px;
+    }    
+    .social-media-list li {
+      height: 60px;
+      width: 60px;
+      line-height: 60px;
+    }
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 5rem;
+        flex-direction: column;
+        background-color: #fff;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow:
+            0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+  
+    .nav-menu.active {
+        left: 0;
+    }
+  
+    .nav-item {
+        margin: 2.5rem 0;
+    }
+  
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+    .hamburger.active .bar:nth-child(2) {
+      opacity: 0;
+  }
+  
+  .hamburger.active .bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+  }
+  
+  .hamburger.active .bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+  }
+  }
+
+  @media screen and (max-width: 569px) {
+  
+    .direct-contact-container, .form-wrapper {
+      float: none;
+      margin: 0 auto;
+    }  
+    .form-control, textarea {
+      
+      margin: 0 auto;
+    }
+   
+    .nombre, .email, textarea {
+      width: 280px;
+    } 
+    
+    .direct-contact-container {
+      margin-top: 40px;
+      max-width: 280px;
+    }  
+    .social-media-list {
+      left: 0;
+    }
+    .social-media-list li {
+      height: 55px;
+      width: 55px;
+      line-height: 55px;
+      font-size: 2rem;
+    }
+    .social-media-list li:after {
+      width: 55px;
+      height: 55px;
+      line-height: 55px;
     }
 }

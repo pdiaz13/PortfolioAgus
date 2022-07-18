@@ -10,17 +10,26 @@
 </head>
 <body>
     <!-- header-menu-->
-<header class="header">
-    <a href="#" class="logo">AM</a>
-    <input type="checkbox" id="side-menu" class="side-menu">
-    <label for="side-menu" class="hamb"><span class="hamb-line"></span></label>
-    <nav class="nav">
-        <ul class="menu">
-            <li><a href="#Sobre mi">Sobre mí</a></li>
-            <li><a href="#Galeria">Galería</a></li>
-            <li><a href="#Contacto">Contacto</a></li>
-        </ul>
-    </nav>
+    <header class="header">
+      <nav class="navbar">
+          <a href="#" class="nav-logo">AM F&V</a>
+          <ul class="nav-menu">
+              <li class="nav-item">
+                  <a href="#Sobre mi" class="nav-link">Sobre mi</a>
+              </li>
+              <li class="nav-item">
+                  <a href="#Galeria" class="nav-link">Galeria</a>
+              </li>
+              <li class="nav-item">
+                  <a href="#Contacto" class="nav-link">Contacto</a>
+              </li>
+          </ul>
+          <div class="hamburger">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+          </div>
+      </nav>
 </header>
 
 <main>
@@ -38,7 +47,7 @@
 
     <div class="about-text">
         <h2> Sobre mi</h2>
-        <h5> Fotógrafo & Filmmaker</h5>
+        <h5> Fotógrafo & Filmmaker 📸📹</h5>
         <p>Hola! Soy Agustín Martín, tengo 23 años, soy fotógrafo y videógrafo. Estoy cursando las materias finales de la tecnicatura en la carrera de Cine y Artes AV en la UNC. Amo lo relacionado con el mundo audiovisual y tener la posibilidad de plasmar y registrar sucesos importantes en la vida de las personas.</p>
     </div>
     </div>
@@ -86,39 +95,77 @@
 
 <!--contacto-->
 <a name="Contacto"></a>
-<section class="contact">
-    <div class="contact-container">
-        <div class="contact-me">
-            <h3> Mis redes</h3>
-            <div class="redes">
-           <a href="https://www.behance.net/agustinmartin3" target="_blank" class="fa-brands fa-behance"></a>
-            <a href="https://www.linkedin.com/in/agust%C3%ADn-mart%C3%ADn-081554243/" target="_blank" class="fa-brands fa-linkedin-in"></a>
-           <a href="https://www.instagram.com/photograph_agus/" target="_blank" class="fa-brands fa-instagram"></a>
-        </div> 
+<section id="contact">
+    <h1 class="section-header">Contacto</h1>
+    <div class="contact-wrapper">
+
+      <form id="contact-form" class="form-horizontal">
+        <div class="form-group">
+          <div class="fm">
+            <label for="nombre">Nombre*:</label>
+            <input type="text" class="form-control" id="nombre" placeholder="Juan Perez" name="nombre" required>
+          </div>
         </div>
-        <div class="form-c">
-            <form id="form" action="" class="form"> 
-            <h3> Hablemos</h3>
-                <label for="Nombre"> Nombre</label>
-                <input type="text" id="Nombre" name="Nombre" placeholder="Juan" required>
-                <label for="Mail">Mail</label>
-                <input type="email" id="Mail" name="Mail" placeholder="juanruiz@example.com" required>
-                <label for="Mensaje">Mensaje</label>
-                <textarea class="form" id="Mensaje" name="Mensaje" placeholder="Escribe tu mensaje..."required></textarea> 
-                
-                <button type="submit">Enviar</button>
-            </form>
-            <a href="mailto:photograph.agu@gmail.com" id="mailto"> mail</a>
+        <div class="form-group">
+          <div class="fm">
+            <label for="email">E-mail*:</label>
+            <input type="email" class="form-control" id="email" placeholder="JuanP@example.com" name="email" required>
+          </div>
         </div>
-   </div>
-</section>
+        <label for="mensaje">Mensaje*:</label><br>
+        <textarea class="form-control" rows="10" placeholder="Escribe tu mensaje..." name="mensaje" required></textarea>
+        <button type="submit">ENVIAR </button>
+         
+      </form>
+      <a href="mailto:photograph.agu@gmail.com" id="mailto"> mail</a>
+
+        <div class="direct-contact-container">
+          <ul class="contact-list">
+            <li class="list-item"><i class="fa fa-map-marker fa-2x"><span class="contact-text place">Córdoba, Argentina</span></i></li>
+            <li class="list-item"><i class="fa fa-phone fa-2x"><span class="contact-text phone"><a href="tel:+54 9 3543 53-1523">(+54)3543-531523</a></span></i></li>
+          </ul>
+  
+          <ul class="social-media-list">
+            <li><a href="https://www.behance.net/agustinmartin3" target="_blank" class="contact-icon">
+              <i class="fa-brands fa-behance" aria-hidden="true"></i></a>
+            </li>
+            <li><a href="https://www.linkedin.com/in/agust%C3%ADn-mart%C3%ADn-081554243/" target="_blank" class="contact-icon">
+              <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+            </li>
+            <li><a href="https://www.instagram.com/photograph_agus/" target="_blank" class="contact-icon">
+              <i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+            </li>       
+          </ul>
+        </div>
+    </div>
+  </section> 
+       
 </main>
 
 <footer>
     <h4>&copy;Agustin Martin F&V</h4>
 </footer>
 <script>
-    const $form = document.querySelector('#form')
+    // menu
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+
+    hamburger.addEventListener("click", mobileMenu);
+
+    function mobileMenu() {
+      hamburger.classList.toggle("active");
+      navMenu.classList.toggle("active");
+      }
+    const navLink = document.querySelectorAll(".nav-link");
+
+    navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+    function closeMenu() {
+      hamburger.classList.remove("active");
+      navMenu.classList.remove("active");
+      }
+// form
+    const $form = document.querySelector('#contact-form')
     const $buttonMailTo = document.querySelector('#mailto')
 
     $form.addEventListener('submit', handleSubmit)
@@ -126,7 +173,7 @@
     function handleSubmit(event) {
         event.preventDefault()
         const form = new FormData(this)
-        $buttonMailTo.setAttribute('href', `mailto:photograph.agu@gmail.com?subject=nombre ${form.get('Nombre')} correo ${form.get('Mail')}&body=${form.get('Mensaje')}`)
+        $buttonMailTo.setAttribute('href', `mailto:photograph.agu@gmail.com?subject=nombre ${form.get('nombre')} correo ${form.get('email')}&body=${form.get('mensaje')}`)
         $buttonMailTo.click()
 
     }
